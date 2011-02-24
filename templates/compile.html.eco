@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Transmogrify</title>
+</head>
+<body>
+<h1>Compile some CoffeeScript, Uglify some Javascript</h1>
+<p>This service compiles coffeescript and compresses javascript (or does both in one shot). Just post to <code>/compile</code>, get back JSON!</p>
+<h4>Try it out:</h4>
+<label><input name="processor" value="coffee" checked="checked" type="checkbox"> CoffeeScript</label>
+<label><input name="processor" value="uglify" type="checkbox"> Uglify</label>
+<form action="/compile?coffee" method="post">
+<textarea name="data" cols="50" rows="10">
+# Assignment:
+number   = 42
+opposite = true
+
+# Conditions:
+number = -42 if opposite
+
+# Functions:
+square = (x) -> x * x
+
+# Arrays:
+list = [1, 2, 3, 4, 5]
+
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert "I knew it!" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)
+</textarea>
+<p><input type="submit" value="Compile" />
+</form>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript">
+$('input[name=processor]').bind('change', function(){
+  var p = '';
+  $('input[name=processor]:checked').each(function(){
+    p += $(this).val() + ",";
+  });
+
+  $('form').attr('action', '/compile?' + p);
+});
+</script>
+</body>
+</html>
