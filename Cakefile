@@ -19,8 +19,10 @@ task 'test', 'Run tests', ->
     {reporters} = require 'nodeunit'
     reporters.default.run ['test']
 
-task 'server', 'Run server', ->
+option '-p', '--port [NUMBER]', 'port for server to listen on'
+task 'server', 'Run server', (options)->
   build ()->
     http = require('http')
     trans = require('transmogrify')
-    http.createServer(trans.server).listen(3010)
+    p = options.port or 8080
+    http.createServer(trans.server).listen(p)

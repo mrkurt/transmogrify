@@ -9,5 +9,5 @@ To test:
 
 To run server:
 
-    cake server
+    cake server --port <NUMBER>
     http://localhost:3010
