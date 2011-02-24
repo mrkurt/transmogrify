@@ -5,9 +5,9 @@ Transmogrify is a Node.js service that compiles CoffeeScript and compresses Java
 
 To test:
 
-  cake test
+    cake test
 
 To run server:
 
-  cake server
-  http://localhost:3010
+    cake server
+    http://localhost:3010
