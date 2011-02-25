@@ -6,7 +6,7 @@
 <h1>Compile some CoffeeScript, Uglify some Javascript</h1>
 <p>This service compiles coffeescript and compresses javascript (or does both in one shot). Just post to <code>/compile</code>, get back JSON!</p>
 <h2>Use with Ruby and <code>ruby-coffee-script</code> (on Heroku, for instance)</h2>
-<p>Install the <code>transmogrify</code> ruby gem, or add it to your <code>Gemfile</code>. This will add a new engine to <code>ruby-coffee-script</code> that points to this service.</p>
+<p>Install the <code>transmogrify</code> ruby gem, or add it to your <code>Gemfile</code>. It will add a fallback engine to <code>ruby-coffee-script</code> that will quietyly compile CoffeeScript by POSTing to tool.</p>
 <h4>Try it out:</h4>
 <label><input name="processor" value="coffee" checked="checked" type="checkbox"> CoffeeScript</label>
 <label><input name="processor" value="uglify" type="checkbox"> Uglify</label>
