@@ -14,7 +14,7 @@ module Transmogrify
   end
   class << self
     def endpoint
-      @endpoint ||= nil
+      @endpoint ||= 'http://transmogrify.credibl.es:8080/compile'
     end
     def endpoint=(v)
       @endpoint = v

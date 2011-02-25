@@ -2,7 +2,7 @@
 , "description": "Compile your coffeescripts and minify your javascripts with a webservice"
 , "contributors":
   [ "Kurt Macke" ]
-, "version": "0.1.0"
+, "version": "0.1.1"
 , "licenses": [
   { "type": "MIT"
   , "url": "http://github.com/mrkurt/transmogrify/raw/master/LICENSE"
